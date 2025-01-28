@@ -11,6 +11,7 @@ import { DataService } from '../../../core/providers/data/data.service';
     templateUrl: './account-address-book.component.html',
     // styleUrls: ['./account-address-book.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone:true
 })
 export class AccountAddressBookComponent implements OnInit {
 

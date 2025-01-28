@@ -25,7 +25,6 @@ const DECLARATIONS = [
     AccountDashboardComponent,
     AccountOrderListComponent,
     AccountOrderDetailComponent,
-    AccountAddressBookComponent,
     AccountAddressDetailComponent,
     AccountCustomerDetailsComponent,
     AccountChangeCredentialsComponent,
@@ -37,12 +36,17 @@ const DECLARATIONS = [
     ChangeEmailAddressComponent,
     AccountSignInComponent,
 ];
+const STANDALONE=[
+    AccountAddressBookComponent
+]
 
 @NgModule({
-    declarations: DECLARATIONS,
+    declarations:DECLARATIONS,
     imports: [
         SharedModule,
         RouterModule.forChild(routes),
+        STANDALONE
+        
     ],
     providers: [
         AccountGuard,
