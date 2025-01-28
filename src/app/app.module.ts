@@ -51,8 +51,8 @@ export class AppModule {
      */
     private handleScrollOnNavigations() {
         this.router.events.pipe(
-            filter((e): e is NavigationEnd => e instanceof NavigationEnd),
-        ).subscribe(event => {
+            filter((e: any): e is NavigationEnd => e instanceof NavigationEnd),
+        ).subscribe((event: { urlAfterRedirects: string; }) => {
             if (this.document?.defaultView) {
                 const parsed = this.urlSerializer.parse(event.urlAfterRedirects);
                 const primaryRoot = parsed.root.children.primary;
