@@ -6,12 +6,16 @@ import { DataService } from '../../../core/providers/data/data.service';
 import { StateService } from '../../../core/providers/state/state.service';
 
 import { VERIFY } from './verify.graphql';
+import { IMPORTS } from 'src/app/shared/shared.module';
+import { CenteredCardComponent } from "../../../shared/components/centered-card/centered-card.component";
 
 @Component({
     selector: 'vsf-verify',
     templateUrl: './verify.component.html',
     // styleUrls: ['./verify.component.scss'],
     changeDetection: ChangeDetectionStrategy.Default,
+    imports: [...IMPORTS, CenteredCardComponent]
+
 })
 export class VerifyComponent {
     password = '';

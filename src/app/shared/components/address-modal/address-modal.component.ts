@@ -14,12 +14,15 @@ import { DataService } from '../../../core/providers/data/data.service';
 import { Dialog } from '../../../core/providers/modal/modal-types';
 
 import { CREATE_ADDRESS } from './address-modal.graphql';
+import { IMPORTS } from '../../shared.module';
+import { AddressFormComponent } from "../address-form/address-form.component";
 
 @Component({
     selector: 'vsf-address-modal',
     templateUrl: './address-modal.component.html',
     // styleUrls: ['./address-modal.component.scss'],
     changeDetection: ChangeDetectionStrategy.Default,
+     imports: [...IMPORTS, AddressFormComponent]
 })
 export class AddressModalComponent implements Dialog<AddressFragment>, OnInit {
     resolveWith: (result?: any) => void;

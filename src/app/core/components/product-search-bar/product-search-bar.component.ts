@@ -3,12 +3,14 @@ import { UntypedFormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
+import { IMPORTS } from 'src/app/shared/shared.module';
 
 @Component({
     selector: 'vsf-product-search-bar',
     templateUrl: './product-search-bar.component.html',
     // styleUrls: ['./product-search-bar.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
+     imports:[...IMPORTS]   
 })
 export class ProductSearchBarComponent implements OnInit, OnDestroy {
     /** If true, searches as you type */

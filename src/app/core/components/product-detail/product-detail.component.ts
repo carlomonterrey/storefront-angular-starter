@@ -16,6 +16,12 @@ import { StateService } from '../../providers/state/state.service';
 
 import { ADD_TO_CART, GET_PRODUCT_DETAIL } from './product-detail.graphql';
 import { ActiveService } from '../../providers/active/active.service';
+import { IMPORTS } from 'src/app/shared/shared.module';
+import { SafeHtmlPipe } from "../../../shared/pipes/safe-html.pipe";
+import { CollectionBreadcrumbsComponent } from "../collection-breadcrumbs/collection-breadcrumbs.component";
+import { AssetGalleryComponent } from "../asset-gallery/asset-gallery.component";
+import { FormatPricePipe } from "../../../shared/pipes/format-price.pipe";
+import { TopReviewsComponent } from "../top-reviews/top-reviews.component";
 
 type Variant = NonNullable<GetProductDetailQuery['product']>['variants'][number];
 type Collection = NonNullable<GetProductDetailQuery['product']>['collections'][number];
@@ -24,6 +30,7 @@ type Collection = NonNullable<GetProductDetailQuery['product']>['collections'][n
     selector: 'vsf-product-detail',
     templateUrl: './product-detail.component.html',
     styleUrls: ['./product-detail.component.scss'],
+     imports: [...IMPORTS, SafeHtmlPipe, CollectionBreadcrumbsComponent, AssetGalleryComponent, FormatPricePipe, TopReviewsComponent]
 })
 export class ProductDetailComponent implements OnInit, OnDestroy {
 

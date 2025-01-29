@@ -6,12 +6,14 @@ import { DataService } from '../../../core/providers/data/data.service';
 import { StateService } from '../../../core/providers/state/state.service';
 
 import { SIGN_IN } from './sign-in.graphql';
+import { IMPORTS } from '../../shared.module';
 
 @Component({
     selector: 'vsf-sign-in',
     templateUrl: './sign-in.component.html',
     styleUrls: ['./sign-in.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
+    imports:[...IMPORTS]
 })
 export class SignInComponent {
     @Input() navigateToOnSuccess: any[] | undefined;

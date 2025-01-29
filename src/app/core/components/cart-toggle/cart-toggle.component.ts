@@ -7,11 +7,13 @@ import { DataService } from '../../providers/data/data.service';
 import { StateService } from '../../providers/state/state.service';
 
 import { GET_CART_TOTALS } from './cart-toggle.graphql';
+import { AsyncPipe, CommonModule } from '@angular/common';
 
 @Component({
     selector: 'vsf-cart-toggle',
     templateUrl: './cart-toggle.component.html',
     styleUrls: ['./cart-toggle.component.scss'],
+    imports:[AsyncPipe,CommonModule]
 })
 export class CartToggleComponent implements OnInit {
     @Output() toggle = new EventEmitter<void>();

@@ -1,16 +1,20 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 
 import { RequestPasswordResetMutation, RequestPasswordResetMutationVariables } from '../../../common/generated-types';
 import { DataService } from '../../../core/providers/data/data.service';
 
 import { REQUEST_PASSWORD_RESET } from './forgotten-password.graphql';
+import { FormsModule } from '@angular/forms';
+import { CenteredCardComponent } from "../../../shared/components/centered-card/centered-card.component";
 
 @Component({
     selector: 'vsf-forgotten-password',
     templateUrl: './forgotten-password.component.html',
     styleUrls: ['./forgotten-password.component.scss'],
     changeDetection: ChangeDetectionStrategy.Default,
+    imports: [FormsModule, CenteredCardComponent]
+
 })
 export class ForgottenPasswordComponent {
     emailAddress = '';

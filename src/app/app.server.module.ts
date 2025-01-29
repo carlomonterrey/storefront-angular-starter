@@ -9,8 +9,9 @@ import { AppModule } from './app.module';
     imports: [
         AppModule,
         ServerModule,
+        AppComponent
     ],
-    bootstrap: [AppComponent],
+    bootstrap: [],
     providers: [
         provideClientHydration(),
     ],

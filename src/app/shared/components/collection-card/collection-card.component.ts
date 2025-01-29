@@ -3,12 +3,14 @@ import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 
 import { GetCollectionQuery } from '../../../common/generated-types';
 import { AssetPreviewPipe } from '../../pipes/asset-preview.pipe';
+import { IMPORTS } from '../../shared.module';
 
 @Component({
     selector: 'vsf-collection-card',
     templateUrl: './collection-card.component.html',
     // styleUrls: ['./collection-card.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
+     imports: [...IMPORTS, AssetPreviewPipe]
 })
 export class CollectionCardComponent implements OnChanges {
     @Input() collection: NonNullable<GetCollectionQuery['collection']>;

@@ -16,6 +16,8 @@ import { DataService } from '../../providers/data/data.service';
 import { StateService } from '../../providers/state/state.service';
 
 import { GET_COLLECTION, SEARCH_PRODUCTS } from './product-list.graphql';
+import { IMPORTS } from 'src/app/shared/shared.module';
+import { ProductListControlsComponent } from "../product-list-controls/product-list-controls.component";
 
 type SearchItem = SearchProductsQuery['search']['items'][number];
 
@@ -23,6 +25,7 @@ type SearchItem = SearchProductsQuery['search']['items'][number];
     selector: 'vsf-product-list',
     templateUrl: './product-list.component.html',
 // styleUrls: ['./product-list.component.scss'],
+ imports: [...IMPORTS, ProductListControlsComponent]
     })
 export class ProductListComponent implements OnInit {
     products$: Observable<SearchItem[]>;

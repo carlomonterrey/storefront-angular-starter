@@ -46,14 +46,15 @@ const CORE_COMPONENTS = [
     AssetGalleryComponent,
 ];
 
-@NgModule({ declarations: [
-        ...CORE_COMPONENTS,
-        TopReviewsComponent,
-    ],
+@NgModule({ declarations: [],
     exports: [
         ...CORE_COMPONENTS,
     ], imports: [SharedModule,
-        BrowserModule,
+        [
+            ...CORE_COMPONENTS,
+            TopReviewsComponent,
+        ]
+        ,
         ApolloModule], providers: [
         { provide: HTTP_INTERCEPTORS, useClass: DefaultInterceptor, multi: true },
         { provide: APP_BASE_HREF, useValue: environment.baseHref },

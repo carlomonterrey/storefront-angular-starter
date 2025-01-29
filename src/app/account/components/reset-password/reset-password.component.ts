@@ -1,17 +1,20 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
 import { ResetPasswordMutation, ResetPasswordMutationVariables } from '../../../common/generated-types';
 import { DataService } from '../../../core/providers/data/data.service';
 import { StateService } from '../../../core/providers/state/state.service';
 
 import { RESET_PASSWORD } from './reset-password.graphql';
+import { CenteredCardComponent } from "../../../shared/components/centered-card/centered-card.component";
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'vsf-reset-password',
     templateUrl: './reset-password.component.html',
     // styleUrls: ['./reset-password.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [ CenteredCardComponent,FormsModule]
 })
 export class ResetPasswordComponent {
     password = '';

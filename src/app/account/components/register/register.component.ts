@@ -4,12 +4,16 @@ import { RegisterMutation, RegisterMutationVariables } from '../../../common/gen
 import { DataService } from '../../../core/providers/data/data.service';
 
 import { REGISTER } from './register.graphql';
+import { FormsModule } from '@angular/forms';
+import { CenteredCardComponent } from "../../../shared/components/centered-card/centered-card.component";
 
 @Component({
     selector: 'vsf-register',
     templateUrl: './register.component.html',
     // styleUrls: ['./register.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [FormsModule, CenteredCardComponent]
+
 })
 export class RegisterComponent {
     firstName: string;

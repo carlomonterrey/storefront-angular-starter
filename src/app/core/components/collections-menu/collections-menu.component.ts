@@ -1,6 +1,6 @@
 import { Overlay, OverlayConfig } from '@angular/cdk/overlay';
 import { TemplatePortal } from '@angular/cdk/portal';
-import { DOCUMENT } from '@angular/common';
+import { AsyncPipe, DOCUMENT } from '@angular/common';
 import {
     ChangeDetectionStrategy,
     Component,
@@ -19,6 +19,7 @@ import { GET_COLLECTIONS } from '../../../common/graphql/documents.graphql';
 import { DataService } from '../../../core/providers/data/data.service';
 
 import { arrayToTree, RootNode, TreeNode } from './array-to-tree';
+import { IMPORTS } from 'src/app/shared/shared.module';
 
 type CollectionItem = GetCollectionsQuery['collections']['items'][number];
 
@@ -27,6 +28,8 @@ type CollectionItem = GetCollectionsQuery['collections']['items'][number];
     templateUrl: './collections-menu.component.html',
     // styleUrls: ['./collections-menu.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
+        imports:[...IMPORTS,AsyncPipe]
+    
 })
 export class CollectionsMenuComponent implements OnInit, OnDestroy {
 

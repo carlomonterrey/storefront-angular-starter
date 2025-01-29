@@ -4,6 +4,8 @@ import { Subject } from 'rxjs';
 import { Dialog, DIALOG_COMPONENT, MODAL_OPTIONS, ModalOptions } from '../../providers/modal/modal-types';
 
 import { DialogButtonsDirective } from './dialog-buttons.directive';
+import { IMPORTS } from 'src/app/shared/shared.module';
+import { DialogComponentOutletComponent } from "./dialog-component-outlet.component";
 
 /**
  * This component should only be instatiated dynamically by the ModalService. It should not be used
@@ -13,6 +15,7 @@ import { DialogButtonsDirective } from './dialog-buttons.directive';
     selector: 'vsf-modal-dialog',
     templateUrl: './modal-dialog.component.html',
     // styleUrls: ['./modal-dialog.component.scss'],
+     imports: [...IMPORTS, DialogComponentOutletComponent]
 })
 export class ModalDialogComponent<T extends Dialog<any>> {
     closeModal: (result?: any) => void;

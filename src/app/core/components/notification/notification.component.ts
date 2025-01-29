@@ -2,12 +2,14 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Inject, Output } from
 import { Subject } from 'rxjs';
 
 import { NotificationOptions, NOTIFICATION_OPTIONS } from '../../providers/notification/notification-types';
+import { IMPORTS } from 'src/app/shared/shared.module';
 
 @Component({
     selector: 'vsf-notification',
     templateUrl: './notification.component.html',
     styleUrls: ['./notification.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
+     imports:[...IMPORTS]
 })
 export class NotificationComponent {
     close = new Subject();

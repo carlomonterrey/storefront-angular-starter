@@ -14,12 +14,15 @@ import { StateService } from '../../providers/state/state.service';
 
 import { ADJUST_ITEM_QUANTITY, REMOVE_ITEM_FROM_CART } from './cart-drawer.graphql';
 import { ActiveService } from '../../providers/active/active.service';
+import { IMPORTS } from 'src/app/shared/shared.module';
+import { FormatPricePipe } from 'src/app/shared/pipes/format-price.pipe';
 
 @Component({
     selector: 'vsf-cart-drawer',
     templateUrl: './cart-drawer.component.html',
     styleUrls: ['./cart-drawer.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
+     imports:[...IMPORTS,FormatPricePipe]
 })
 export class CartDrawerComponent implements OnInit {
     @Input() visible = false;

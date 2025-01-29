@@ -8,6 +8,7 @@ import { GET_COLLECTIONS } from '../../../common/graphql/documents.graphql';
 import { DataService } from '../../providers/data/data.service';
 import { StateService } from '../../providers/state/state.service';
 import { arrayToTree, RootNode, TreeNode } from '../collections-menu/array-to-tree';
+import { IMPORTS } from 'src/app/shared/shared.module';
 
 
 type CollectionItem = GetCollectionsQuery['collections']['items'][number];
@@ -16,6 +17,7 @@ type CollectionItem = GetCollectionsQuery['collections']['items'][number];
     templateUrl: './collections-menu-mobile.component.html',
     styleUrls: ['./collections-menu-mobile.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
+     imports:[...IMPORTS]
 })
 export class CollectionsMenuMobileComponent implements OnInit {
     @HostBinding('class.visible')

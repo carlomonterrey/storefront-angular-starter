@@ -11,6 +11,7 @@ import {
 import { Subject, Subscription } from 'rxjs';
 
 import { RadioCardFieldsetComponent } from './radio-card-fieldset.component';
+import { IMPORTS } from '../../shared.module';
 
 @Component({
     selector: 'vsf-radio-card',
@@ -18,6 +19,7 @@ import { RadioCardFieldsetComponent } from './radio-card-fieldset.component';
     styleUrls: ['./radio-card.component.scss'],
     exportAs: 'KbRadioCard',
     changeDetection: ChangeDetectionStrategy.OnPush,
+     imports:[...IMPORTS]
 })
 export class RadioCardComponent<T = any> implements OnInit, OnDestroy {
     @Input() item: T;

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { SharedModule } from '../shared/shared.module';
+import { IMPORTS, SharedModule } from '../shared/shared.module';
 
 import { routes } from './account.routes';
 import { AccountAddressBookComponent } from './components/account-address-book/account-address-book.component';
@@ -36,16 +36,14 @@ const DECLARATIONS = [
     ChangeEmailAddressComponent,
     AccountSignInComponent,
 ];
-const STANDALONE=[
-    AccountAddressBookComponent
-]
 
 @NgModule({
-    declarations:DECLARATIONS,
+    declarations:[],
     imports: [
         SharedModule,
         RouterModule.forChild(routes),
-        STANDALONE
+        DECLARATIONS,
+        IMPORTS
         
     ],
     providers: [

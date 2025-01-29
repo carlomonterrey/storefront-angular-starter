@@ -7,11 +7,34 @@ import { GetCollectionsQuery, GetCollectionsQueryVariables } from './common/gene
 import { GET_COLLECTIONS } from './common/graphql/documents.graphql';
 import { DataService } from './core/providers/data/data.service';
 import { StateService } from './core/providers/state/state.service';
+import { IMPORTS } from './shared/shared.module';
+import { LayoutHeaderComponent } from "./core/components/layout/layout-header.component";
+import { AccountLinkComponent } from "./core/components/account-link/account-link.component";
+import { MobileMenuToggleComponent } from "./core/components/mobile-menu-toggle/mobile-menu-toggle.component";
+import { CollectionsMenuComponent } from "./core/components/collections-menu/collections-menu.component";
+import { ProductSearchBarComponent } from "./core/components/product-search-bar/product-search-bar.component";
+import { CartToggleComponent } from "./core/components/cart-toggle/cart-toggle.component";
+import { CartDrawerComponent } from "./core/components/cart-drawer/cart-drawer.component";
+import { CollectionsMenuMobileComponent } from "./core/components/collections-menu-mobile/collections-menu-mobile.component";
+import { LayoutFooterComponent } from "./core/components/layout/layout-footer.component";
+import { LayoutComponent } from "./core/components/layout/layout.component";
 
 @Component({
     selector: 'vsf-root',
     templateUrl: './app.component.html',
     // styleUrls: ['./app.component.scss'],
+        imports: [
+            ...IMPORTS, LayoutHeaderComponent, 
+            AccountLinkComponent, 
+            MobileMenuToggleComponent, 
+            CollectionsMenuComponent, 
+            ProductSearchBarComponent, 
+            CartToggleComponent, 
+            CartDrawerComponent, 
+            CollectionsMenuMobileComponent,
+             LayoutFooterComponent,
+              LayoutComponent]
+    
 })
 export class AppComponent implements OnInit {
     cartDrawerVisible$: Observable<boolean>;

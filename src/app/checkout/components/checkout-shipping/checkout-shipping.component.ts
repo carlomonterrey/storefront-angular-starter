@@ -36,6 +36,8 @@ import {
     SET_SHIPPING_METHOD,
     TRANSITION_TO_ARRANGING_PAYMENT,
 } from './checkout-shipping.graphql';
+import { IMPORTS } from 'src/app/shared/shared.module';
+import { RadioCardFieldsetComponent } from "../../../shared/components/radio-card/radio-card-fieldset.component";
 
 export type AddressFormValue = Pick<AddressFragment, Exclude<keyof AddressFragment, 'country'>> & { countryCode: string; };
 
@@ -44,6 +46,7 @@ export type AddressFormValue = Pick<AddressFragment, Exclude<keyof AddressFragme
     templateUrl: './checkout-shipping.component.html',
     // styleUrls: ['./checkout-shipping.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [...IMPORTS, AddressFormComponent, RadioCardFieldsetComponent]
 })
 export class CheckoutShippingComponent implements OnInit, OnDestroy {
     @ViewChild('addressForm') addressForm: AddressFormComponent;

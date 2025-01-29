@@ -51,8 +51,7 @@ const SHARED_DECLARATIONS = [
     RadioCardFieldsetComponent,
     CartTotalsComponent,
 ];
-
-const IMPORTS = [
+export const  IMPORTS = [
     FontAwesomeModule,
     CommonModule,
     FormsModule,
@@ -62,8 +61,8 @@ const IMPORTS = [
 ];
 
 @NgModule({
-    declarations: SHARED_DECLARATIONS,
-    imports: IMPORTS,
+    declarations: [],
+    imports: [...IMPORTS, ...SHARED_DECLARATIONS],
     exports: [...IMPORTS, ...SHARED_DECLARATIONS],
 })
 export class SharedModule {
