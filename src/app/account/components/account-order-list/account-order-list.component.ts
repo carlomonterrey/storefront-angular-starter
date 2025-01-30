@@ -6,12 +6,15 @@ import { GetOrderListQuery, GetOrderListQueryVariables, SortOrder } from '../../
 import { DataService } from '../../../core/providers/data/data.service';
 
 import { GET_ORDER_LIST } from './account-order-list.graphql';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
     selector: 'vsf-account-order-list',
     templateUrl: './account-order-list.component.html',
     // styleUrls: ['./account-order-list.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
+        imports:[AsyncPipe]
+    
 })
 export class AccountOrderListComponent implements OnInit {
 

@@ -8,12 +8,14 @@ import { DataService } from '../../../core/providers/data/data.service';
 import { StateService } from '../../../core/providers/state/state.service';
 
 import { GET_NEXT_ORDER_STATES, TRANSITION_TO_ADDING_ITEMS } from './checkout-process.graphql';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
     selector: 'vsf-checkout-process',
     templateUrl: './checkout-process.component.html',
     // styleUrls: ['./checkout-process.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
+    imports:[AsyncPipe]
 })
 export class CheckoutProcessComponent implements OnInit {
 

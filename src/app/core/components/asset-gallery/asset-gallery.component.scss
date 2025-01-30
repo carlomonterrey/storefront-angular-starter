@@ -1,7 +1,7 @@
-//@import "variables";
+//@use "variables";
 //
 //::ng-deep {
-//    @import "photoswipe/dist/photoswipe.css";
+//    @use "photoswipe/dist/photoswipe.css";
 //}
 //
 //.product-image {

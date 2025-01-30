@@ -5,6 +5,7 @@ import { AssetFragment } from '../../../common/generated-types';
 
 import './types.d';
 import { isPlatformBrowser } from '@angular/common';
+import { AssetPreviewPipe } from 'src/app/shared/pipes/asset-preview.pipe';
 
 export type AssetWithDimensions = Pick<AssetFragment, 'id' | 'preview' | 'width' | 'height'>;
 
@@ -12,6 +13,7 @@ export type AssetWithDimensions = Pick<AssetFragment, 'id' | 'preview' | 'width'
     selector: 'vsf-asset-gallery',
     templateUrl: './asset-gallery.component.html',
     styleUrls: ['./asset-gallery.component.scss'],
+    imports:[AssetPreviewPipe]
 })
 export class AssetGalleryComponent implements OnInit, OnChanges, AfterViewInit {
     @Input() assets?: AssetWithDimensions[] = [];

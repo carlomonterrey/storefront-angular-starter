@@ -22,6 +22,7 @@ import { CollectionBreadcrumbsComponent } from "../collection-breadcrumbs/collec
 import { AssetGalleryComponent } from "../asset-gallery/asset-gallery.component";
 import { FormatPricePipe } from "../../../shared/pipes/format-price.pipe";
 import { TopReviewsComponent } from "../top-reviews/top-reviews.component";
+import { CommonModule } from '@angular/common';
 
 type Variant = NonNullable<GetProductDetailQuery['product']>['variants'][number];
 type Collection = NonNullable<GetProductDetailQuery['product']>['collections'][number];
@@ -30,7 +31,7 @@ type Collection = NonNullable<GetProductDetailQuery['product']>['collections'][n
     selector: 'vsf-product-detail',
     templateUrl: './product-detail.component.html',
     styleUrls: ['./product-detail.component.scss'],
-     imports: [...IMPORTS, SafeHtmlPipe, CollectionBreadcrumbsComponent, AssetGalleryComponent, FormatPricePipe, TopReviewsComponent]
+     imports: [...IMPORTS,CommonModule, SafeHtmlPipe, CollectionBreadcrumbsComponent, AssetGalleryComponent, FormatPricePipe, TopReviewsComponent]
 })
 export class ProductDetailComponent implements OnInit, OnDestroy {
 
